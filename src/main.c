@@ -10,11 +10,6 @@ int main(void) {
     InitWindow(WIDTH * 10, HEIGHT * 10, "CHIP-8 Interpreter");
     SetTargetFPS(60);
 
-    // randomly set a few pixels in the display
-    display[10][14] = true;
-    display[14][14] = true;
-    display[17][56] = true;
-
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(BLACK);
@@ -25,7 +20,9 @@ int main(void) {
                 if (display[i][j] == true) {
                     pixel_color = WHITE;
                 }
-                DrawRectangle(j * 10, i * 10, 10, 10, pixel_color);
+                DrawRectangle(j * 10 + 1, i * 10 + 1, 8, 8, pixel_color);
+
+                DrawText("something", 100, 200, 32, WHITE);
             }
         }
 
