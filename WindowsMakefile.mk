@@ -5,6 +5,7 @@ lflags := -Lraylib_windows/lib -lraylib -lwinmm -lgdi32 -lm
 target := bin/chip8
 
 $(target): src/main.c
+	@mkdir bin
 	$(cc) $^ -o $@ $(cflags) $(lflags)
 
 .PHONY: run
